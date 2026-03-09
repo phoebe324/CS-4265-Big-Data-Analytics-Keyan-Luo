@@ -25,24 +25,30 @@ The current prototype successfully processed:
 Due to the dataset size, the raw data files are not fully included in the repository.
 
 ---
-
 ## Project Structure
 
+```
 CS-4265-Big-Data-Analytics-Keyan-Luo
 │
-├── src/                    # Spark pipeline code
+├── src/
 │   └── pipeline_poc.py
 │
-├── docs/                   # Pipeline execution screenshots
+├── docs/
+│   ├── 1.png
+│   ├── 2.png
+│   ├── 3.png
+│   ├── 4.png
+│   └── 5.png
 │
-├── data/                   # Dataset folder (not included in repository)
+├── data/
 │   └── README.md
 │
-├── output/                 # Pipeline output directory
+├── output/
 │
-├── requirements.txt        # Python dependencies
+├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ## Environment Setup
 
