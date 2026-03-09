@@ -10,7 +10,7 @@ This dataset contains user recommendation data and game metadata from the Steam 
 
 Kaggle Dataset:
 
-https://www.kaggle.com/datasets/antonkozyriev/steam-games
+[https://www.kaggle.com/datasets/antonkozyriev/steam-games](https://www.kaggle.com/datasets/antonkozyriev/game-recommendations-on-steam?resource=download)
 
 ---
 
