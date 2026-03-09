@@ -27,3 +27,55 @@ Due to the dataset size, the raw data files are not fully included in the reposi
 ---
 
 ## Project Structure
+
+CS-4265-Big-Data-Analytics-Keyan-Luo
+│
+├── src/                    # Spark pipeline code
+│   └── pipeline_poc.py
+│
+├── docs/                   # Pipeline execution screenshots
+│
+├── data/                   # Dataset folder (not included in repository)
+│   └── README.md
+│
+├── output/                 # Pipeline output directory
+│
+├── requirements.txt        # Python dependencies
+├── .gitignore
+└── README.md
+
+## Environment Setup
+
+Requirements:
+
+- Python 3.9+
+- Java JDK (required for Apache Spark)
+- Apache Spark (running in local mode)
+
+Install dependencies:
+
+pip install -r requirements.txt
+## How to Run
+
+Run the Spark pipeline using:
+
+python src/pipeline_poc.py
+
+The pipeline performs the following steps:
+
+1. Initialize the Spark environment
+2. Load the Steam datasets
+3. Perform a distributed join between the datasets
+4. Display a preview of the joined dataset
+5. Print the dataset schema
+
+## Pipeline Execution Evidence
+
+Screenshots of the pipeline execution are available in the `docs/` folder.
+These screenshots demonstrate:
+
+- Spark environment initialization
+- Dataset loading
+- Distributed join execution
+- Dataset schema inspection
+- Output stage error related to Hadoop configuration
