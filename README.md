@@ -13,10 +13,15 @@ The system processes over 41 million records and performs data cleaning, transfo
 
 
 src/
+
 run_pipeline.py
+
 ingestion.py
+
 processing.py
+
 aggregation.py
+
 storage.py
 
 
