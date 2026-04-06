@@ -22,11 +22,11 @@ src/
 
 ---
 
-##  How to Run (M3)
+## How to Run (M3)
 
 ### 1. Prerequisites
 * **Python 3.x**
-* **Apache Spark** (ensure `SPARK_HOME` and `JAVA_HOME` are configured)
+* **Apache Spark** (proper environment setup required)
 * **Dependencies**: Install via pip.
   ```bash
   pip install -r requirements.txt
@@ -54,7 +54,7 @@ The pipeline generates the following analytical output:
 
 ### Technical Design Note:
 * **Distributed Processing**: Spark is utilized for heavy-duty distributed joins and aggregations on the full 41M record dataset.
-* **Storage Strategy**: After aggregation, the result size is significantly reduced. For maximum compatibility and stability in varied environments (e.g., Windows/HDFS limitations), the final small-scale result is written using a localized output method.
+* **Storage Strategy**: After aggregation, the result size becomes much smaller, so it is written locally for simplicity and stability.
 
 ---
 
