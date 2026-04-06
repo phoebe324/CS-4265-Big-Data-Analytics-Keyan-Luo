@@ -1,87 +1,58 @@
-# CS-4265 Big Data Analytics – Keyan Luo
+# CS4265 Big Data Analytics Project
 
-## Project Overview
+This repository contains the implementation of a big data pipeline developed across multiple milestones (M1, M2, M3).
 
-This project implements a proof-of-concept Big Data analytics pipeline using Apache Spark.  
-The goal is to demonstrate how a distributed data processing framework can handle large datasets and perform analytical operations such as joins and schema analysis.
+## Milestone 3 (M3) - Complete Pipeline
 
-The project originally started as a stock market analytics idea, but it was later changed to use a much larger dataset from the Steam platform. The Steam dataset contains over 41 million recommendation records, which makes it more suitable for demonstrating Big Data processing.
+In M3, a full end-to-end pipeline is implemented using Apache Spark.  
+The system processes over 41 million records and performs data cleaning, transformation, and aggregation.
 
----
-
-## Dataset
-
-The project uses a Steam dataset containing the following files:
-
-- `games.csv`
-- `recommendations.csv`
-- `users.csv` (planned for later stages)
-
-The current prototype successfully processed:
-
-- 50,872 game records  
-- 41,154,794 recommendation records
-
-Due to the dataset size, the raw data files are not fully included in the repository.
-
----
 ## Project Structure
 
-```
-CS-4265-Big-Data-Analytics-Keyan-Luo
-│
-├── src/
-│   └── pipeline_poc.py
-│
-├── docs/
-│   ├── 1.png
-│   ├── 2.png
-│   ├── 3.png
-│   ├── 4.png
-│   └── 5.png
-│
-├── data/
-│   └── README.md
-│
-├── output/
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
 
-## Environment Setup
+src/
+run_pipeline.py
+ingestion.py
+processing.py
+aggregation.py
+storage.py
 
-Requirements:
 
-- Python 3.9+
-- Java JDK (required for Apache Spark)
-- Apache Spark (running in local mode)
+## How to Run (M3)
 
-Install dependencies:
+1. Install dependencies:
+
 
 pip install -r requirements.txt
-## How to Run
 
-Run the Spark pipeline using:
 
-python src/pipeline_poc.py
+2. Place dataset files in the `data/` folder:
 
-The pipeline performs the following steps:
+- games.csv  
+- users.csv  
+- recommendations.csv  
+- games_metadata.json  
 
-1. Initialize the Spark environment
-2. Load the Steam datasets
-3. Perform a distributed join between the datasets
-4. Display a preview of the joined dataset
-5. Print the dataset schema
+3. Run the pipeline from project root:
 
-## Pipeline Execution Evidence
 
-Screenshots of the pipeline execution are available in the `docs/` folder.
-These screenshots demonstrate:
+python src/run_pipeline.py
 
-- Spark environment initialization
-- Dataset loading
-- Distributed join execution
-- Dataset schema inspection
-- Output stage error related to Hadoop configuration
+
+## Output
+
+The pipeline generates:
+
+
+output/result.csv
+
+
+## Notes
+
+Spark is used for distributed processing of large-scale data (41M records).  
+After aggregation, the result size is reduced and written locally for stability.
+
+## Previous Milestones
+
+- M1: Initial project idea and design  
+- M2: Initial pipeline setup and data processing  
