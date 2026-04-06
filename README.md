@@ -1,41 +1,66 @@
+
 # CS4265 Big Data Analytics Project
 
-This repository contains the implementation of a big data pipeline developed across multiple milestones (M1, M2, M3).
+This repository contains the implementation of a comprehensive Big Data pipeline developed across multiple milestones (M1, M2, M3).
 
 ## Milestone 3 (M3) - Complete Pipeline
 
-In M3, a full end-to-end pipeline is implemented using Apache Spark.  
-The system processes over 41 million records and performs data cleaning, transformation, and aggregation.
+In Milestone 3, a full end-to-end pipeline is implemented using **Apache Spark**. The system is designed to process a large-scale Steam dataset with over **41 million records**, covering data ingestion, cleaning, transformation, and aggregation.
+
+---
 
 ## Project Structure
 
 ```text
 src/
-  run_pipeline.py
-  ingestion.py
-  processing.py
-  aggregation.py
-  storage.py
-How to Run (M3)
-Install dependencies:
-pip install -r requirements.txt
-Place dataset files in the data/ folder:
-games.csv
-users.csv
-recommendations.csv
-games_metadata.json
-Run the pipeline from the project root:
+├── run_pipeline.py    # Main entry point to trigger the full pipeline
+├── ingestion.py       # Handles data loading from CSV and JSON sources
+├── processing.py      # Performs data cleaning, joining, and feature engineering
+├── aggregation.py     # Executes distributed grouping and statistical analysis
+└── storage.py         # Manages final data output and persistence
+```
+
+---
+
+##  How to Run (M3)
+
+### 1. Prerequisites
+* **Python 3.x**
+* **Apache Spark** (ensure `SPARK_HOME` and `JAVA_HOME` are configured)
+* **Dependencies**: Install via pip.
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+### 2. Data Preparation
+Place the following dataset files in the `data/` folder at the project root:
+* `games.csv`
+* `users.csv`
+* `recommendations.csv`
+* `games_metadata.json`
+
+### 3. Execution
+Run the pipeline from the **project root** directory:
+```bash
 python src/run_pipeline.py
-Output
+```
 
-The pipeline generates:
+---
 
-output/result.csv
-Notes
+## Output & Architecture
 
-Spark is used for distributed processing of large-scale data (41M records).
-After aggregation, the result size is reduced and written locally for stability.
+The pipeline generates the following analytical output:
+* **Location**: `output/result.csv`
 
-Previous Milestones
-M1: Initial project idea and design
-M2: Initial pipeline setup and data processing
+### Technical Design Note:
+* **Distributed Processing**: Spark is utilized for heavy-duty distributed joins and aggregations on the full 41M record dataset.
+* **Storage Strategy**: After aggregation, the result size is significantly reduced. For maximum compatibility and stability in varied environments (e.g., Windows/HDFS limitations), the final small-scale result is written using a localized output method.
+
+---
+
+## Previous Milestones
+
+* **M1**: Initial project proposal, design, and dataset selection.
+* **M2**: Initial pipeline framework, POC of data processing, and environment setup.
+
+---
