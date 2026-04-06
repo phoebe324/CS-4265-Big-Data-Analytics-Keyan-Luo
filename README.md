@@ -16,51 +16,26 @@ src/
   processing.py
   aggregation.py
   storage.py
-
-
----
-
-## How to Run (M3)
-
-1. Install dependencies:
-
-
+How to Run (M3)
+Install dependencies:
 pip install -r requirements.txt
-
-
-2. Place dataset files in the `data/` folder:
-
-- games.csv  
-- users.csv  
-- recommendations.csv  
-- games_metadata.json  
-
-3. Run the pipeline from project root:
-
-
+Place dataset files in the data/ folder:
+games.csv
+users.csv
+recommendations.csv
+games_metadata.json
+Run the pipeline from the project root:
 python src/run_pipeline.py
-
-
----
-
-## Output
+Output
 
 The pipeline generates:
 
-
 output/result.csv
+Notes
 
-
----
-
-## Notes
-
-Spark is used for distributed processing of large-scale data (41M records).  
+Spark is used for distributed processing of large-scale data (41M records).
 After aggregation, the result size is reduced and written locally for stability.
 
----
-
-## Previous Milestones
-
-- M1: Initial project idea and design  
-- M2: Initial pipeline setup and data processing  
+Previous Milestones
+M1: Initial project idea and design
+M2: Initial pipeline setup and data processing
