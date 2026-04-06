@@ -33,6 +33,25 @@ src/
   ```
 
 ### 2. Data Preparation
+## Data Source
+
+The dataset used in this project is the *Game Recommendations on Steam* dataset from Kaggle:
+
+https://www.kaggle.com/datasets/antonkozyriev/game-recommendations-on-steam
+
+This dataset contains over 41 million cleaned and preprocessed user recommendations from the Steam platform, along with game and user information. :contentReference[oaicite:1]{index=1}
+
+The dataset includes:
+
+- games.csv (game information such as price, release date, ratings)
+- users.csv (user profile information)
+- recommendations.csv (user-game interactions and recommendations)
+- games_metadata.json (additional game details such as tags and descriptions)
+
+Due to the large size of the dataset (~600MB+), it is not included in this repository.
+
+After downloading, place all files into the `data/` folder before running the pipeline.
+
 Place the following dataset files in the `data/` folder at the project root:
 * `games.csv`
 * `users.csv`
