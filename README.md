@@ -1,4 +1,4 @@
-# CS4265 Big Data Analytics Project
+CS4265 Big Data Analytics Project
 
 This repository contains the implementation of a big data pipeline developed across multiple milestones (M1, M2, M3).
 
@@ -6,6 +6,8 @@ This repository contains the implementation of a big data pipeline developed acr
 
 In M3, a full end-to-end pipeline is implemented using Apache Spark.  
 The system processes over 41 million records and performs data cleaning, transformation, and aggregation.
+
+---
 
 ## Project Structure
 
@@ -17,6 +19,8 @@ processing.py
 aggregation.py
 storage.py
 
+
+---
 
 ## How to Run (M3)
 
@@ -39,6 +43,8 @@ pip install -r requirements.txt
 python src/run_pipeline.py
 
 
+---
+
 ## Output
 
 The pipeline generates:
@@ -47,10 +53,14 @@ The pipeline generates:
 output/result.csv
 
 
+---
+
 ## Notes
 
 Spark is used for distributed processing of large-scale data (41M records).  
 After aggregation, the result size is reduced and written locally for stability.
+
+---
 
 ## Previous Milestones
 
