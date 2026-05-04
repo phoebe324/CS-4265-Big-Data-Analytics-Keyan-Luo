@@ -2,7 +2,7 @@
 
 A Spark pipeline that joins **41 million Steam reviews** with an **independent Wikidata knowledge base** and produces a verified per-game analytics table — in **121 seconds** on a single laptop.
 
-![Pipeline architecture](docs/architecture.png)
+![Pipeline architecture](doc/architecture.png)
 
 ## What it does, in one paragraph
 
@@ -64,7 +64,7 @@ project_m4_code/
 │   ├── raw/                    # (gitignored) put input files here
 │   ├── processed/              # (gitignored) Parquet + CSV preview
 │   └── sample/                 # tiny example data committed
-├── docs/
+├── doc/
 │   ├── architecture.md         # technical design walkthrough
 │   ├── architecture.png        # diagram
 │   ├── data_dictionary.md      # column-by-column schema reference
