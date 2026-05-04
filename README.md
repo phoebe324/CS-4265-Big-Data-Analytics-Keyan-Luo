@@ -46,7 +46,7 @@ Output appears in `data/processed/result_parquet/`. Validation report regenerate
 <summary><b>Repository layout</b></summary>
 
 ```
-project_m4_code/
+CS-4265-Big-Data-Analytics-Keyan-Luo/
 ├── README.md                   # this file
 ├── LICENSE                     # MIT
 ├── requirements.txt            # pinned dependencies
