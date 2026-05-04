@@ -1,0 +1,47 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# --- Spark / Hadoop ---
+*.crc
+.metastore_db/
+metastore_db/
+spark-warehouse/
+derby.log
+
+# --- Project data (do NOT commit) ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Sample data IS committed so others can run the pipeline
+!data/sample/
+
+# --- Credentials ---
+.env
+*.pem
+*.key
+
+# --- Logs ---
+*.log
