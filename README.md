@@ -27,7 +27,7 @@ PySpark 3.5 · Wikidata SPARQL · SteamSpy API · PyYAML · pytest · Python 3.1
 
 ```bash
 git clone <this-repo-url>
-cd project_m4_code
+cd CS-4265-Big-Data-Analytics-Keyan-Luo
 python -m venv .venv && .venv/Scripts/activate    # Windows; use source .venv/bin/activate on macOS/Linux
 pip install -r requirements.txt
 
