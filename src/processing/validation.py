@@ -286,7 +286,7 @@ def run_validation(
     warnings = check_thresholds(counts_raw, rates, cfg)
     wd_match = wikidata_match_rate(processed)
 
-    report_path = cfg["project_root"] / "docs" / "validation.md"
+    report_path = cfg["project_root"] / "doc" / "validation.md"
     write_markdown_report(
         report_path,
         counts_raw,
