@@ -1,0 +1,59 @@
+# =============================================================
+#  Steam Big Data Pipeline — Configuration
+#  All tunable parameters live here. Code reads from this file
+#  via src/utils/config.py.
+# =============================================================
+
+paths:
+  # Paths are resolved relative to the project root (the directory
+  # containing this config/ folder). Override with CLI flags if needed.
+  data_dir: "data/raw"
+  output_dir: "data/processed"
+  sample_dir: "data/sample"
+
+# SteamSpy public API (no auth required) — supplementary popularity stats
+steamspy:
+  base_url: "https://steamspy.com/api.php"
+  request_type: "top100owned"
+  timeout_seconds: 30
+  max_retries: 3
+  backoff_seconds: 5
+
+# Wikidata SPARQL endpoint — independent, open knowledge base maintained
+# by the Wikimedia Foundation. No registration or API key required.
+# We restrict the query to entities that have a Steam app ID (P1733), so
+# the result set is bounded (~10k entities) and reliably joinable.
+wikidata:
+  endpoint: "https://query.wikidata.org/sparql"
+  page_size: 500
+  max_games: 15000
+  timeout_seconds: 60
+  max_retries: 3
+  backoff_seconds: 10
+  sleep_between_pages_seconds: 2
+
+# Input file names (under paths.data_dir)
+input_files:
+  games:           "games.csv"
+  metadata:        "games_metadata.json"
+  recommendations: "recommendations.csv"
+  steamspy:        "steamspy_data.csv"
+  genre_categories: "external_genres.csv"
+  wikidata:        "wikidata_games.json"
+
+# Spark runtime settings
+spark:
+  app_name: "Steam Big Data Pipeline"
+  shuffle_partitions: 32
+  log_level: "WARN"
+  driver_memory: "6g"
+  driver_max_result_size: "2g"
+
+# Validation thresholds — pipeline will warn (not fail) if violated
+validation:
+  max_null_rate_critical_cols: 0.05    # 5%
+  min_expected_records: 100
+  critical_columns:
+    - app_id
+    - title
+    - is_recommended
